@@ -1,5 +1,11 @@
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
 </mat-toolbar>
-
-<router-outlet></router-outlet>
+<mat-grid-list cols="2" >
+  <mat-grid-tile>
+    <router-outlet></router-outlet>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-owner-list></app-owner-list>
+  </mat-grid-tile>
+</mat-grid-list>

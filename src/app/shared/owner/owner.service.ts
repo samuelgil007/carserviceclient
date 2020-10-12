@@ -4,19 +4,26 @@ import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class OwnerService {
-  public API = '//https://thawing-chamber-47973.herokuapp.com';
+  public API = 'https://thawing-chamber-47973.herokuapp.com';
   public owner_API = this.API + '/owners';
 
   constructor(private http: HttpClient) {
   }
 
   getAll(): Observable<any> {
-    return this.http.get(this.API);
+    return this.http.get(this.owner_API);
   }
 
   get(id: string) {
     return this.http.get(this.owner_API + '/' + id);
   }
+  //marca error pero esta correcto
+  async getAll2(){
+    let response = await fetch(this.owner_API);
+    let datos:JSON = await response.json();
+    return datos;
+  }
+
 
   save(owner: any): Observable<any> {
     let result: Observable<Object>;

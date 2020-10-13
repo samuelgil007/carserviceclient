@@ -3,10 +3,10 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item *ngFor="let owner of owners">
-          <mat-checkbox class="example-margin" (change)="seleccionar(owner._links.owner.href.slice(-2))"></mat-checkbox>
+          <mat-checkbox class="example-margin" (change)="seleccionar(owner._links.owner.href.substring(51))"></mat-checkbox>
           <img mat-list-avatar src="{{owner.giphyUrl}}" alt="{{owner.name}}">
           <h3 mat-line>
-            <a mat-button [routerLink]="['/owner-edit', owner._links.owner.href.slice(-2)]">{{owner.name}}</a>
+            <a mat-button [routerLink]="['/owner-edit', owner._links.owner.href.substring(51)]">{{owner.name}}</a>
 
           </h3>
         </mat-list-item>

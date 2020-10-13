@@ -17,13 +17,13 @@ export class OwnerService {
   get(id: string) {
     return this.http.get(this.owner_API + '/' + id);
   }
-  //marca error pero esta correcto
+
+  
   async getAll2(){
     let response = await fetch(this.owner_API);
     let datos:JSON = await response.json();
     return datos;
   }
-
 
   save(owner: any): Observable<any> {
     let result: Observable<Object>;
@@ -34,8 +34,12 @@ export class OwnerService {
     }
     return result;
   }
-
+  //remover con link de parametro
   remove(href: string) {
     return this.http.delete(href);
+  }
+  //remover con id de parametro
+  remove2(id: string) {
+    return this.http.delete(this.owner_API+ '/' + id);
   }
 }

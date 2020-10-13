@@ -23,6 +23,12 @@ export class CarListComponent implements OnInit {
           datos = datos._embedded.owners;
           let owne = datos.filter(own => own.dni == car.ownerDni);
           car.nameOwner = owne[0]? owne[0].name : "Nobody";
+          //Aqui se actualizan los carros si ya no existe su propietario
+          if(owne[0] == undefined){
+            car.ownerDni = owne[0]?  owne[0].dni : "";
+            this.carService.save(car).subscribe(result => {
+            }, error => console.error(error));
+          }
         });
 
         

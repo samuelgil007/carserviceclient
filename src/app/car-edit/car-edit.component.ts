@@ -55,8 +55,7 @@ export class CarEditComponent implements OnInit, OnDestroy {
           this.giphyService.get(resultado[0].name).subscribe(url => resultado[0].giphyUrl = url);
           
         } else {
-          console.log(`Owner with id '${id}' not found, returning to list`);
-          
+          console.log("This vehicle has no existing owner, please put one");
         }
       });
 
@@ -75,10 +74,6 @@ export class CarEditComponent implements OnInit, OnDestroy {
     this.carService.save(form).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
-    
-    /* this.OwnerService.save(form).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error)); */
   }
 
   remove(href) {

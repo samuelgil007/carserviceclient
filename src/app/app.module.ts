@@ -13,13 +13,16 @@ import { CarEditComponent } from './car-edit/car-edit.component';
 import { FormsModule } from '@angular/forms';
 import { OwnerListComponent } from './owner-list/owner-list.component';
 import {MatGridListModule} from '@angular/material';
+import { OwnerEditComponent } from './owner-edit/owner-edit.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarListComponent,
     CarEditComponent,
-    OwnerListComponent
+    OwnerListComponent,
+    OwnerEditComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {MatGridListModule} from '@angular/material';
     MatInputModule,
     MatListModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

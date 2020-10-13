@@ -19,11 +19,11 @@ export class OwnerService {
   }
 
   
-  async getAll2(){
+  /* async getAll2(){
     let response = await fetch(this.owner_API);
     let datos:JSON = await response.json();
     return datos;
-  }
+  } */
 
   save(owner: any): Observable<any> {
     let result: Observable<Object>;

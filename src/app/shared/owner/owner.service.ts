@@ -18,13 +18,6 @@ export class OwnerService {
     return this.http.get(this.owner_API + '/' + id);
   }
 
-  
-  /* async getAll2(){
-    let response = await fetch(this.owner_API);
-    let datos:JSON = await response.json();
-    return datos;
-  } */
-
   save(owner: any): Observable<any> {
     let result: Observable<Object>;
     if (owner['href']) {
@@ -34,11 +27,11 @@ export class OwnerService {
     }
     return result;
   }
-  //remover con link de parametro
+  //remover con link 
   remove(href: string) {
     return this.http.delete(href);
   }
-  //remover con id de parametro
+  //remover con id 
   remove2(id: string) {
     return this.http.delete(this.owner_API+ '/' + id);
   }

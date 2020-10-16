@@ -43,7 +43,10 @@ export class CarEditComponent implements OnInit, OnDestroy {
           }
         });
       }
-      //Quitar el [0], solo para pruebas
+      /*retorna  una lista con los propietarios existentes
+      para que se despliegue en una lista en la pagina html. Al ser una api compartida
+      añadi el "[0]" en caso de que hayan varios propietarios con el mismoo dni.
+      */
       this.OwnerService.getAll().subscribe(owners => {
         owners = owners._embedded.owners;
         this.owners = owners;

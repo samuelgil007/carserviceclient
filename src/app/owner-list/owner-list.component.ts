@@ -26,6 +26,7 @@ export class OwnerListComponent implements OnInit {
       }
     });
   }
+  //Los owners a eliminar juntos son puestos en un array con su id.
   seleccionar(id: String) {
       if (this.seleccionados.indexOf(id) > -1 && this.seleccionados.length > 0) {
         this.seleccionados = this.seleccionados.filter(dato => { return dato != id });}
@@ -33,6 +34,7 @@ export class OwnerListComponent implements OnInit {
         this.seleccionados.push(id);
       }
   }
+  //Se elimina todos los owner que tengan su id en el array.
   remove() {
      for (let id of this.seleccionados) {
       this.OwnerService.remove2(String(id)).subscribe(result => {

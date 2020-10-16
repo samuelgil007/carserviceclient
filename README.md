@@ -1,3 +1,21 @@
+# Detalles de las funcionalidades añadidas en el laboratorio
+
+  Para comenzar, se le añadieron tres modulos nuevos:
+  - owner-service = En este modulo esta el servicio con los metodos crud asincronos que estan ligados
+  a la api.
+  - owner-list = En este modulo se despliega la lista de owners existentes en la api, este modulo no 
+  tiene ruta propia, ya que se despliega en la ruta car-list junto con la lista de carros.
+  - owner-edit = En este modulo se despliega la informacion para la edicion para un owner parecido al edit de los carros. 
+  
+  Con ayuda de los tres modulos nuevos anteriores, se construyeron estas nuevas funcionalidades:
+  
+  - Se puede desplegar una lista de los carros con sus owners. 
+  - Se permite agregarle el owner al carro desde car-edit. 
+  - Se puede desplegar una lista de los owners. 
+  - Se pueden crear o actualizar los owners desde owner-edit. 
+  - Se puede eliminar varios owners al tiempo en la ruta car-list. 
+  - Al eliminarse un owner se elimina la relación que este tiene con un carro.
+
 # CarServiceClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
